@@ -6,16 +6,6 @@
   align-items: center;
 
   &__heading {
-    // &:after {
-    //   content: '';
-    //   border-bottom: 3px solid $color-red;
-    //   width: 19rem;
-    //   display: block;
-    //   margin: 0 auto;
-    //   position: relative;
-    //   left: -3.5rem;
-    // }
-
     &:before {
       position: absolute;
       content: '';
@@ -26,24 +16,30 @@
       position: relative;
       left: 3.5rem;
       top: 6.3rem;
-
       z-index: -1;
 
       @media (max-width: 770px) {
-        // width: 14rem;
         border-bottom: 14px solid $color-red;
       }
     }
   }
 }
 
-// single project
-
+// single project container
 .project {
   position: relative;
   display: flex;
+  align-items: center;
+  gap: 4rem;
   margin-bottom: 14rem;
-  justify-content: flex-start;
+  width: 100%;
+  max-width: 1400px;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+  }
 
   @media (max-width: 560px) {
     margin-bottom: 12rem;
@@ -58,44 +54,59 @@
       position: relative;
       height: 70rem;
       width: 100rem;
-
-      // border: 1px solid red;
+      flex-shrink: 0;
       background-color: $color-blue-dark;
-      transition: all 0.2s;
+      transition: all 0.3s ease;
       cursor: pointer;
 
-      @media (max-width: 1100px) {
-        height: 64rem;
-        width: 90rem;
-      }
-
-      @media (max-width: 970px) {
-        height: 58rem;
+      @media (max-width: 1300px) {
+        height: 60rem;
         width: 80rem;
       }
 
-      @media (max-width: 900px) {
-        height: 54rem;
-        width: 75rem;
+      @media (max-width: 1100px) {
+        width: 100%;
+        height: 52rem;
       }
 
       @media (max-width: 700px) {
-        height: 48rem;
-        width: 64rem;
+        height: 44rem;
       }
 
       @media (max-width: 560px) {
-        height: 40rem;
-        width: 52rem;
+        height: 36rem;
       }
 
       @media (max-width: 440px) {
-        height: 30rem;
-        width: 39rem;
+        height: 28rem;
       }
 
       &:hover {
-        transform: scale(0.95);
+        transform: scale(0.98);
+      }
+
+      /* Custom Alert-U Background Styling */
+      &--alertu {
+        background: url('../assets/projbg.png') center/cover no-repeat !important;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+
+        &:hover {
+          box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+        }
+      }
+
+      /* Custom Gumande Background Styling */
+      &--gumande {
+        background: url('../assets/gumande.png') center/cover no-repeat !important;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+
+        &:hover {
+          box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+        }
       }
     }
 
@@ -111,34 +122,21 @@
 
   &__info {
     position: relative;
-    top: 8rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 1rem 0;
+    max-width: 45rem;
+    z-index: 10;
 
-    height: fit-content;
-    padding: 1rem;
-
-    // border: 1px solid red;
-    // flex: 1;
-    // left: -20px;
-    z-index: 9999999;
-
-    @media (max-width: 1000px) {
-      width: fit-content;
+    @media (max-width: 1100px) {
+      max-width: 100%;
+      padding: 0;
     }
 
     @media (max-width: 700px) {
-      background-color: rgba($color-background, 0.5);
-    }
-
-    @media (max-width: 560px) {
-      top: 4rem;
-    }
-
-    @media (max-width: 440px) {
-      top: 2rem;
-    }
-
-    @media (max-width: 400px) {
-      top: 0;
+      background-color: transparent;
     }
   }
 
@@ -146,7 +144,6 @@
     position: relative;
     z-index: 66;
     font-size: 3.5rem;
-    // font-weight: 700;
 
     @media (max-width: 900px) {
       font-size: 3rem;
@@ -158,7 +155,6 @@
 
     @media (max-width: 550px) {
       font-size: 2.5rem;
-      // background-color: rgba($color-background, 0.6);
     }
 
     @media (max-width: 400px) {
@@ -171,15 +167,14 @@
     margin-top: 3rem;
     font-size: 1.8rem;
     font-weight: 500;
-
-    z-index: 999909999;
+    z-index: 99;
 
     @media (max-width: 560px) {
       margin-top: 2rem;
     }
   }
 
-  // new button styling that works on higher dpi screen
+  // Action Buttons
   &__live-2 {
     font-size: 1.6rem;
     font-weight: 700;
@@ -193,10 +188,8 @@
 
     width: fit-content;
     padding: 1rem 1.2rem;
-
     position: relative;
     margin-top: 3rem;
-
     cursor: pointer;
 
     @media (max-width: 560px) {
@@ -208,17 +201,11 @@
       content: '';
       height: 2px;
       background-color: $color-red;
-
       width: 100%;
       bottom: 1px;
       display: block;
-      // margin: 0 auto;
-
       transform-origin: bottom;
       transition: all 0.25s;
-
-      // left: -8rem;
-
       z-index: -1;
     }
 
@@ -242,9 +229,7 @@
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 3px;
-    // border-bottom: 2px solid $color-red;
     z-index: 9;
-
     transition: all 0.2s;
     cursor: pointer;
 
@@ -261,20 +246,14 @@
       position: absolute;
       content: '';
       border-bottom: 2px solid $color-red;
-
       width: calc(100% + 2rem);
-      // height: 100%;
       left: -10%;
       top: 0.5rem;
       display: block;
       margin: 0 auto;
       position: relative;
-
       transform-origin: bottom;
       transition: all 0.2s;
-
-      // left: -8rem;
-
       z-index: -1;
     }
 
@@ -293,88 +272,219 @@
         transform: scaleY(12.5);
       }
     }
-
-    @media (max-width: 550px) {
-      // font-size: 2.5rem;
-      // background-color: rgba($color-background, 0.6);
-    }
   }
 
   &__code {
     &:after {
       width: calc(100% + 2rem);
       left: -8%;
-      // transform: translateX(3px);
     }
   }
 
+  // Left Aligned Projects (Image left, Info right)
   &-left {
-    align-self: flex-start;
-    margin-left: 22rem;
+    flex-direction: row;
+    align-self: center;
 
-    @media (max-width: 1700px) {
-      margin-left: 11rem;
-    }
-
-    @media (max-width: 1500px) {
-      margin-left: 0;
-    }
-
-    & .project__info {
-      left: -8rem;
-      margin-right: -2rem;
-
-      @media (max-width: 800px) {
-        // left: -4rem;
-        margin-right: -4rem;
-      }
-
-      @media (max-width: 770px) {
-        // left: -4rem;
-        margin-right: -4rem;
-      }
-
-      @media (max-width: 600px) {
-        // left: -4rem;
-        margin-right: -6rem;
-      }
-
-      @media (max-width: 440px) {
-        left: -10rem;
-        margin-right: -7rem;
-      }
+    @media (max-width: 1100px) {
+      flex-direction: column;
     }
   }
 
+  // Right Aligned Projects (Info left, Image right)
   &-right {
-    align-self: flex-end;
-    margin-right: 22rem;
+    flex-direction: row-reverse;
+    align-self: center;
 
-    @media (max-width: 1700px) {
-      margin-right: 11rem;
+    @media (max-width: 1100px) {
+      flex-direction: column;
+    }
+  }
+}
+
+/* Multi-Device Showcase Alignment Layout (Enlarged Images) */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 1rem;
+  width: 96%;
+  height: 92%;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  &__desktop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    /* Custom Gumande Straight Landscape Variant */
+    &--gumande {
+      .desktop-gumande-img {
+        position: absolute;
+        width: 70%;
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+        object-fit: cover;
+
+        &--left {
+          top: 10% !important;
+          left: 2% !important;
+          transform: rotate(0deg) scale(1) !important;
+          z-index: 1 !important;
+
+          &:hover {
+            transform: rotate(0deg) scale(1.05) translate(10px, -10px) !important;
+            z-index: 10 !important;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9) !important;
+          }
+        }
+
+        &--right {
+          bottom: 10% !important;
+          right: 2% !important;
+          transform: rotate(0deg) scale(1) !important;
+          z-index: 2 !important;
+
+          &:hover {
+            transform: rotate(0deg) scale(1.05) translate(-10px, 10px) !important;
+            z-index: 10 !important;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9) !important;
+          }
+        }
+      }
     }
 
-    @media (max-width: 1500px) {
-      margin-right: 0;
+    img {
+      position: absolute;
+      border-radius: 8px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+      object-fit: cover;
     }
 
-    & .project__info {
-      right: -8rem;
-      margin-left: -2rem;
+    .desktop-1 {
+      width: 86%;
+      top: 6%;
+      left: 0;
+      z-index: 2;
+    }
 
-      @media (max-width: 770px) {
-        // left: -4rem;
-        margin-left: -4rem;
+    .desktop-2 {
+      width: 80%;
+      bottom: 6%;
+      right: -2%;
+      z-index: 1;
+      opacity: 0.92;
+      filter: brightness(0.85);
+    }
+  }
+
+  &__mobile {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      position: absolute;
+      width: 58%;
+      max-width: 185px;
+      border-radius: 14px;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+      object-fit: cover;
+    }
+
+    .mobile-1 {
+      left: 0%;
+      top: 8%;
+      z-index: 4;
+      transform: rotate(-4deg);
+    }
+
+    .mobile-2 {
+      right: 0%;
+      bottom: 8%;
+      z-index: 3;
+      transform: rotate(5deg);
+      filter: brightness(0.9);
+    }
+  }
+
+  /* Dynamic hover separation effect */
+  &:hover {
+    .desktop-1 {
+      transform: translate(-8px, -6px) scale(1.03);
+      z-index: 5;
+    }
+    .desktop-2 {
+      transform: translate(8px, 6px) scale(1.03);
+      filter: brightness(1);
+    }
+    .mobile-1 {
+      transform: rotate(-1deg) translateY(-8px) scale(1.06);
+    }
+    .mobile-2 {
+      transform: rotate(2deg) translateY(8px) scale(1.06);
+      filter: brightness(1);
+    }
+  }
+}
+
+/* Responsive adjustments for tablets and smaller screens */
+@media (max-width: 900px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 92%;
+    height: 88%;
+
+    &__desktop {
+      .desktop-1 {
+        width: 90%;
+        top: 2%;
+      }
+      .desktop-2 {
+        width: 82%;
+        bottom: 2%;
+      }
+    }
+
+    &__mobile {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .showcase-grid__desktop--gumande {
+    .desktop-gumande-img {
+      width: 85% !important;
+
+      &--left {
+        top: 5% !important;
+        left: 0% !important;
+        transform: rotate(0deg) !important;
       }
 
-      @media (max-width: 600px) {
-        // left: -4rem;
-        margin-left: -6rem;
-      }
-
-      @media (max-width: 440px) {
-        right: -10rem;
-        margin-left: -7rem;
+      &--right {
+        bottom: 5% !important;
+        right: 0% !important;
+        transform: rotate(0deg) !important;
       }
     }
   }
@@ -394,7 +504,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  // z-index: 0;
 }
 
 .weather {

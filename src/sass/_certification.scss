@@ -1,0 +1,122 @@
+.certifications {
+  width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 1500px) {
+    width: 1100px;
+  }
+
+  @media (max-width: 1200px) {
+    width: auto;
+  }
+
+  &__heading {
+    &:before {
+      position: absolute;
+      content: '';
+      border-bottom: 18px solid $color-red;
+      width: 16rem;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      left: 3.5rem;
+      top: 6.3rem;
+      z-index: -1;
+
+      @media (max-width: 770px) {
+        border-bottom: 14px solid $color-red;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row; // Keeps certification badges side-by-side in a row
+    justify-content: center;
+    align-items: stretch;
+    gap: 2.5rem;
+    width: 100%;
+
+    @media (max-width: 1000px) {
+      flex-direction: column; // Stacks neatly on mobile/tablet
+      align-items: center;
+    }
+  }
+}
+
+// Sub-components: Cards styled with the same gradient border as .skills__item
+.certification-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+
+  // Matching .skills__item gradient border design
+  border: double 3px transparent;
+  border-image-slice: 1;
+  border-width: 3px;
+  background-image: linear-gradient($color-background, $color-background),
+    radial-gradient(circle at top left, $color-blue, $color-red);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__badge {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    img {
+      max-height: 70px;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  &__issuer {
+    font-size: 1.3rem;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    flex-grow: 1;
+  }
+}
