@@ -313,7 +313,7 @@
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9) !important;
       }
 
-      /* Centered Secondary Projects Section & Navigation Header */
+      /* Horizontal Scrolling Row & Navigation Header with Centered Layout */
       .secondary-projects {
         width: 100%;
         max-width: 1400px;
@@ -370,10 +370,10 @@
         box-shadow: 0 6px 20px rgba(235, 87, 87, 0.4);
       }
 
-      /* Centered Scrollable Container with Balanced Box Dimensions */
+      /* Centered Scrollable Container with Smooth Padding & Snap */
       .secondary-projects__scroll-container {
         display: flex;
-        justify-content: center; /* Centers cards when they fit on screen */
+        justify-content: center;
         gap: 3rem;
         overflow-x: auto;
         width: 100%;
@@ -403,10 +403,10 @@
         border-radius: 4px;
       }
 
-      /* Balanced Square/Box Card Styling (Not a tall vertical rectangle) */
+      /* Balanced Square/Box Card Styling */
       .media-project-card {
         flex: 0 0 410px;
-        min-height: 520px; /* Balanced box height for descriptions */
+        min-height: 520px;
         scroll-snap-align: start;
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -436,16 +436,11 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
 
-      .media-project-card__media img {
+      .media-project-card__media iframe {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        border: none;
         display: block;
-        transition: transform 0.4s ease;
-      }
-
-      .media-project-card__media:hover img {
-        transform: scale(1.05);
       }
 
       .media-project-card__body {
@@ -989,7 +984,7 @@
         </div>
       </div>
 
-      <!-- Other Notable Projects: Centered Scrollable Row with Balanced Square Cards & Chevrons -->
+      <!-- Other Notable Projects: Centered Scrollable Row with Playable Google Drive Video Iframes & Chevrons -->
       <div class="secondary-projects">
         <div class="secondary-projects__header-row">
           <h3 class="secondary-projects__heading">Other Notable Projects</h3>
@@ -1008,7 +1003,7 @@
           <!-- Mini Media Card 1: 3MigsBarong -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="3MigsBarong Preview" />
+              <iframe src="https://drive.google.com/file/d/1KbuPE5w21b3PzGzt7Gf5XaH1zAnPNUk1/preview" allow="autoplay" allowfullscreen></iframe>
             </div>
             <div class="media-project-card__body">
               <div>
@@ -1033,7 +1028,7 @@
           <!-- Mini Media Card 2: Bayani Rise of Heroes -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Bayani Rise of Heroes Preview" />
+              <iframe src="https://drive.google.com/file/d/11Kim6L5CLiGGCJa46Z_VnSIy0xcSJdrL/preview" allow="autoplay" allowfullscreen></iframe>
             </div>
             <div class="media-project-card__body">
               <div>
@@ -1058,7 +1053,7 @@
           <!-- Mini Media Card 3: Inventory Management System -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Inventory Management System Preview" />
+              <iframe src="https://drive.google.com/file/d/1KbuPE5w21b3PzGzt7Gf5XaH1zAnPNUk1/preview" allow="autoplay" allowfullscreen></iframe>
             </div>
             <div class="media-project-card__body">
               <div>
