@@ -6,6 +6,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/template.html',
       favicon: `./src/assets/fav.png`,
+      minify: false, // Disables strict html-minifier checking that causes the build crash
     }),
   ],
   module: {
