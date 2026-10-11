@@ -313,123 +313,206 @@
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9) !important;
       }
 
-      /* Secondary Projects Grid Styling */
+      /* Horizontal Scrolling Row & Navigation Header with Corrected Spacing */
       .secondary-projects {
         width: 100%;
         max-width: 1400px;
-        margin: 2rem auto 0 auto;
+        margin: 8rem auto 6rem auto; /* Generous breathing room above and below before Contact section */
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 0 2rem;
+      }
+
+      .secondary-projects__header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2.5rem;
       }
 
       .secondary-projects__heading {
         font-size: 3rem;
         font-weight: 700;
         color: #ffffff;
-        margin-bottom: 3.5rem;
         text-transform: uppercase;
         letter-spacing: 2px;
-        text-align: center;
+        margin: 0;
       }
 
-      .secondary-projects__grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem;
-        width: 100%;
-      }
-
-      .mini-project-card {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 2.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-        position: relative;
-        overflow: hidden;
-        backdrop-filter: blur(6px);
-      }
-
-      .mini-project-card:hover {
-        transform: translateY(-6px);
-        border-color: rgba(235, 87, 87, 0.5);
-        background: rgba(255, 255, 255, 0.06);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-      }
-
-      .mini-project-card__top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1.5rem;
-      }
-
-      .mini-project-card__top .folder-icon {
-        font-size: 2.8rem;
-        color: #eb5757;
-      }
-
-      .mini-project-card__top .card-links {
+      /* Chevron Navigation Controls */
+      .scroll-nav-btns {
         display: flex;
         gap: 1.2rem;
       }
 
-      .mini-project-card__top .card-links a {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 1.8rem;
-        transition: color 0.2s ease;
-      }
-
-      .mini-project-card__top .card-links a:hover {
+      .scroll-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         color: #ffffff;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1.6rem;
       }
 
-      .mini-project-card__title {
+      .scroll-btn:hover {
+        background: #eb5757;
+        border-color: #eb5757;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(235, 87, 87, 0.4);
+      }
+
+      /* Scrollable Container with Smooth Padding & Snap */
+      .secondary-projects__scroll-container {
+        display: flex;
+        gap: 3rem;
+        overflow-x: auto;
+        width: 100%;
+        padding: 1rem 0.5rem 3rem 0.5rem;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(235, 87, 87, 0.5) rgba(255, 255, 255, 0.05);
+      }
+
+      .secondary-projects__scroll-container::-webkit-scrollbar {
+        height: 8px;
+      }
+      .secondary-projects__scroll-container::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+      }
+      .secondary-projects__scroll-container::-webkit-scrollbar-thumb {
+        background: rgba(235, 87, 87, 0.5);
+        border-radius: 4px;
+      }
+
+      /* Media Project Card Styling */
+      .media-project-card {
+        flex: 0 0 390px;
+        scroll-snap-align: start;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .media-project-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(235, 87, 87, 0.5);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+      }
+
+      .media-project-card__media {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-color: #0d1117;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .media-project-card__media img,
+      .media-project-card__media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      .media-project-card__media:hover img {
+        transform: scale(1.05);
+      }
+
+      .media-project-card__body {
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: space-between;
+      }
+
+      .media-project-card__title {
         font-size: 2.2rem;
         font-weight: 700;
         color: #ffffff;
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
       }
 
-      .mini-project-card__description {
+      .media-project-card__description {
         font-size: 1.5rem;
-        line-height: 1.5;
+        line-height: 1.6;
         color: rgba(255, 255, 255, 0.75);
         margin-bottom: 2rem;
-        font-weight: 400;
       }
 
-      .mini-project-card__tech {
+      .media-project-card__tech {
         display: flex;
         flex-wrap: wrap;
         gap: 0.6rem;
-        margin-top: auto;
+        margin-bottom: 2rem;
       }
 
-      .mini-project-card__tech span {
-        font-size: 1.15rem;
+      .media-project-card__tech span {
+        font-size: 1.2rem;
         font-weight: 600;
         color: #b0c4de;
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
         padding: 0.3rem 0.8rem;
-        border-radius: 4px;
+        border-radius: 6px;
       }
 
-      @media (max-width: 1100px) {
-        .secondary-projects__grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
+      /* GitHub Button below description (Matches Alert-U Style) */
+      .btn-card-github {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 0.9rem 1.6rem;
+        background-color: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-top: auto;
       }
 
-      @media (max-width: 700px) {
-        .secondary-projects__grid {
-          grid-template-columns: 1fr;
-        }
+      .btn-card-github i {
+        font-size: 1.6rem;
+        color: #eb5757;
+        transition: color 0.3s ease;
+      }
+
+      .btn-card-github:hover {
+        background-color: #ffffff;
+        color: #0d1117;
+        border-color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+      }
+
+      .btn-card-github:hover i {
+        color: #0d1117;
       }
 
       @media (max-width: 560px) {
@@ -897,75 +980,91 @@
         </div>
       </div>
 
-      <!-- Other Notable Projects Showcase Section -->
+      <!-- Other Notable Projects: Scrollable Row with Media Cards & Left/Right Chevrons -->
       <div class="secondary-projects">
-        <h3 class="secondary-projects__heading">Other Notable Projects</h3>
+        <div class="secondary-projects__header-row">
+          <h3 class="secondary-projects__heading">Other Notable Projects</h3>
+          <div class="scroll-nav-btns">
+            <button class="scroll-btn" id="scroll-left" aria-label="Scroll Left">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="scroll-btn" id="scroll-right" aria-label="Scroll Right">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
         
-        <div class="secondary-projects__grid">
+        <div class="secondary-projects__scroll-container" id="projects-scroll-row">
           
-          <!-- Mini Project 1: Weather App -->
-          <div class="mini-project-card">
-            <div>
-              <div class="mini-project-card__top">
-                <i class="fas fa-folder folder-icon"></i>
-                <div class="card-links">
-                  <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" title="View Source"><i class="fab fa-github"></i></a>
-                  <a href="#" target="_blank" rel="noopener noreferrer" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+          <!-- Mini Media Card 1 -->
+          <div class="media-project-card">
+            <div class="media-project-card__media">
+              <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=800&q=80" alt="Weather Forecast App Preview" />
+            </div>
+            <div class="media-project-card__body">
+              <div>
+                <h4 class="media-project-card__title">Weather Forecast App</h4>
+                <p class="media-project-card__description">
+                  A dynamic meteorological application providing real-time weather conditions, forecasts, and location-based meteorological data tracking.
+                </p>
+                <div class="media-project-card__tech">
+                  <span>JavaScript</span>
+                  <span>REST APIs</span>
+                  <span>CSS3</span>
                 </div>
               </div>
-              <h4 class="mini-project-card__title">Weather Forecast App</h4>
-              <p class="mini-project-card__description">
-                A dynamic meteorological application providing real-time weather conditions, forecasts, and location-based meteorological data tracking.
-              </p>
-            </div>
-            <div class="mini-project-card__tech">
-              <span>JavaScript</span>
-              <span>REST APIs</span>
-              <span>CSS3</span>
+              <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="btn-card-github">
+                <i class="fab fa-github"></i>
+                <span>View Source Code</span>
+              </a>
             </div>
           </div>
 
-          <!-- Mini Project 2: Todo Task Manager -->
-          <div class="mini-project-card">
-            <div>
-              <div class="mini-project-card__top">
-                <i class="fas fa-folder folder-icon"></i>
-                <div class="card-links">
-                  <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" title="View Source"><i class="fab fa-github"></i></a>
-                  <a href="#" target="_blank" rel="noopener noreferrer" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+          <!-- Mini Media Card 2 -->
+          <div class="media-project-card">
+            <div class="media-project-card__media">
+              <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&q=80" alt="Interactive Task Manager Preview" />
+            </div>
+            <div class="media-project-card__body">
+              <div>
+                <h4 class="media-project-card__title">Interactive Task Manager</h4>
+                <p class="media-project-card__description">
+                  A streamlined productivity web application enabling users to organize daily workflows, set priorities, and track ongoing tasks seamlessly.
+                </p>
+                <div class="media-project-card__tech">
+                  <span>React</span>
+                  <span>Local Storage</span>
+                  <span>Tailwind</span>
                 </div>
               </div>
-              <h4 class="mini-project-card__title">Interactive Task Manager</h4>
-              <p class="mini-project-card__description">
-                A streamlined productivity web application enabling users to organize daily workflows, set priorities, and track ongoing tasks seamlessly.
-              </p>
-            </div>
-            <div class="mini-project-card__tech">
-              <span>React</span>
-              <span>Local Storage</span>
-              <span>Tailwind</span>
+              <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="btn-card-github">
+                <i class="fab fa-github"></i>
+                <span>View Source Code</span>
+              </a>
             </div>
           </div>
 
-          <!-- Mini Project 3: Retro App / Experience -->
-          <div class="mini-project-card">
-            <div>
-              <div class="mini-project-card__top">
-                <i class="fas fa-folder folder-icon"></i>
-                <div class="card-links">
-                  <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" title="View Source"><i class="fab fa-github"></i></a>
-                  <a href="#" target="_blank" rel="noopener noreferrer" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+          <!-- Mini Media Card 3 -->
+          <div class="media-project-card">
+            <div class="media-project-card__media">
+              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Retro Web UI Preview" />
+            </div>
+            <div class="media-project-card__body">
+              <div>
+                <h4 class="media-project-card__title">Retro Interactive Web UI</h4>
+                <p class="media-project-card__description">
+                  A creative experimental web interface blending vintage aesthetic layouts with modern interactive JavaScript behaviors and transitions.
+                </p>
+                <div class="media-project-card__tech">
+                  <span>HTML5</span>
+                  <span>Sass</span>
+                  <span>JavaScript</span>
                 </div>
               </div>
-              <h4 class="mini-project-card__title">Retro Interactive Web UI</h4>
-              <p class="mini-project-card__description">
-                A creative experimental web interface blending vintage aesthetic layouts with modern interactive JavaScript behaviors and transitions.
-              </p>
-            </div>
-            <div class="mini-project-card__tech">
-              <span>HTML5</span>
-              <span>Sass</span>
-              <span>JavaScript</span>
+              <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="btn-card-github">
+                <i class="fab fa-github"></i>
+                <span>View Source Code</span>
+              </a>
             </div>
           </div>
 
@@ -973,6 +1072,21 @@
       </div>
 
     </section>
+
+    <!-- Simple JS for Left & Right Chevron Scrolling -->
+    <script>
+      const scrollContainer = document.getElementById('projects-scroll-row');
+      const btnLeft = document.getElementById('scroll-left');
+      const btnRight = document.getElementById('scroll-right');
+
+      btnLeft.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: -420, behavior: 'smooth' });
+      });
+
+      btnRight.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: 420, behavior: 'smooth' });
+      });
+    </script>
 
     <section class="contact" id="contact">
       <h2 class="contact__heading section-heading">Contact</h2>
