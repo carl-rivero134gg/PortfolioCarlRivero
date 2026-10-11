@@ -313,6 +313,125 @@
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9) !important;
       }
 
+      /* Secondary Projects Grid Styling */
+      .secondary-projects {
+        width: 100%;
+        max-width: 1400px;
+        margin: 2rem auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .secondary-projects__heading {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 3.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+      }
+
+      .secondary-projects__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        width: 100%;
+      }
+
+      .mini-project-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(6px);
+      }
+
+      .mini-project-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(235, 87, 87, 0.5);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      }
+
+      .mini-project-card__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .mini-project-card__top .folder-icon {
+        font-size: 2.8rem;
+        color: #eb5757;
+      }
+
+      .mini-project-card__top .card-links {
+        display: flex;
+        gap: 1.2rem;
+      }
+
+      .mini-project-card__top .card-links a {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1.8rem;
+        transition: color 0.2s ease;
+      }
+
+      .mini-project-card__top .card-links a:hover {
+        color: #ffffff;
+      }
+
+      .mini-project-card__title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 1rem;
+      }
+
+      .mini-project-card__description {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 2rem;
+        font-weight: 400;
+      }
+
+      .mini-project-card__tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: auto;
+      }
+
+      .mini-project-card__tech span {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #b0c4de;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.3rem 0.8rem;
+        border-radius: 4px;
+      }
+
+      @media (max-width: 1100px) {
+        .secondary-projects__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 700px) {
+        .secondary-projects__grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       @media (max-width: 560px) {
         .project__github-links {
           flex-direction: column;
@@ -543,307 +662,4 @@
             src="./assets/az900.png" 
             alt="Microsoft Certified: Azure Fundamentals" 
             class="certifications__badge-img"
-            style="width: 170px !important; height: auto !important; object-fit: contain !important; background: none !important; border: none !important; box-shadow: none !important; display: block !important; opacity: 1 !important; visibility: visible !important;"
-          />
-          <div class="certifications__title" style="margin-top: 1.5rem !important; font-size: 2.0rem !important; font-weight: 600 !important; line-height: 1.4 !important; color: #ffffff !important; display: block !important; opacity: 1 !important; visibility: visible !important; min-height: 4.2em !important;">
-            Microsoft Certified:<br />Azure Fundamentals<br /><span style="font-size: 1.5rem; opacity: 0.8; font-weight: 400;">AZ-900</span>
-          </div>
-          <a href="https://learn.microsoft.com/en-us/users/CarlAndreiRivero-7298/credentials/74826343802322F?ref=https%3a%2f%2fwww.linkedin.com%2f" target="_blank" class="view-credential-btn">
-            <span style="font-size: 1.5rem;">View Credential</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Certification Item 2 -->
-        <div class="certifications__container" style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: space-between !important; text-align: center !important; opacity: 1 !important; visibility: visible !important; padding: 1rem !important; background: transparent !important; border: none !important; border-radius: 0 !important; width: 280px !important; box-shadow: none !important; backdrop-filter: none !important;">
-          <img 
-            src="./assets/ethical.png" 
-            alt="Cisco Networking Academy: Ethical Hacker" 
-            class="certifications__badge-img"
-            style="width: 170px !important; height: auto !important; object-fit: contain !important; background: none !important; border: none !important; box-shadow: none !important; display: block !important; opacity: 1 !important; visibility: visible !important;"
-          />
-          <div class="certifications__title" style="margin-top: 1.5rem !important; font-size: 2.0rem !important; font-weight: 600 !important; line-height: 1.4 !important; color: #ffffff !important; display: block !important; opacity: 1 !important; visibility: visible !important; min-height: 4.2em !important;">
-            Cisco Networking Academy:<br /><span style="font-size: 1.5rem; opacity: 0.8; font-weight: 400;">Ethical Hacker</span>
-          </div>
-          <a href="https://www.credly.com/badges/8b63fab6-8025-4db3-974d-3ac898fbaa5d" target="_blank" class="view-credential-btn">
-            <span style="font-size: 1.5rem;">View Credential</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Certification Item 3 -->
-        <div class="certifications__container" style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: space-between !important; text-align: center !important; opacity: 1 !important; visibility: visible !important; padding: 1rem !important; background: transparent !important; border: none !important; border-radius: 0 !important; width: 280px !important; box-shadow: none !important; backdrop-filter: none !important;">
-          <img 
-            src="./assets/cybersec.png" 
-            alt="Cisco Networking Academy: Introduction to Cybersecurity" 
-            class="certifications__badge-img"
-            style="width: 170px !important; height: auto !important; object-fit: contain !important; background: none !important; border: none !important; box-shadow: none !important; display: block !important; opacity: 1 !important; visibility: visible !important;"
-          />
-          <div class="certifications__title" style="margin-top: 1.5rem !important; font-size: 2.0rem !important; font-weight: 600 !important; line-height: 1.4 !important; color: #ffffff !important; display: block !important; opacity: 1 !important; visibility: visible !important; min-height: 4.2em !important;">
-            Cisco Networking Academy:<br /><span style="font-size: 1.5rem; opacity: 0.8; font-weight: 400;">Introduction to Cybersecurity</span>
-          </div>
-          <a href="https://www.credly.com/badges/79978995-2958-4f8e-9e52-70208080da8c" target="_blank" class="view-credential-btn">
-            <span style="font-size: 1.5rem;">View Credential</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Certification Item 4 -->
-        <div class="certifications__container" style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: space-between !important; text-align: center !important; opacity: 1 !important; visibility: visible !important; padding: 1rem !important; background: transparent !important; border: none !important; border-radius: 0 !important; width: 280px !important; box-shadow: none !important; backdrop-filter: none !important;">
-          <img 
-            src="./assets/sales.png" 
-            alt="Salesforce SVIP" 
-            class="certifications__badge-img"
-            style="width: 170px !important; height: auto !important; object-fit: contain !important; background: none !important; border: none !important; box-shadow: none !important; display: block !important; opacity: 1 !important; visibility: visible !important;"
-          />
-          <div class="certifications__title" style="margin-top: 1.5rem !important; font-size: 2.0rem !important; font-weight: 600 !important; line-height: 1.4 !important; color: #ffffff !important; display: block !important; opacity: 1 !important; visibility: visible !important; min-height: 4.2em !important;">
-            Salesforce Supported<br /><span style="font-size: 1.5rem; opacity: 0.8; font-weight: 400;">Virtual Internship Program 2025</span>
-          </div>
-          <a href="https://drive.google.com/file/d/1Hx33zEio47udNfrWj1G1CFO7-y6e7eXm/view?usp=sharing" target="_blank" class="view-credential-btn">
-            <span style="font-size: 1.5rem;">View Credential</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-              <polyline points="15 3 21 3 21 9"></polyline>
-              <line x1="10" y1="14" x2="21" y2="3"></line>
-            </svg>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="projects" id="projects">
-      <h2 class="projects__heading section-heading">Projects</h2>
-
-      <!-- Project Item 1: Alert-U -->
-      <div class="project project-left">
-        <a href="https://lifeinvadersocial.herokuapp.com/" target="_blank" rel="noopener noreferrer">
-          <div class="project__image-container project__image-container--alertu">
-            <div class="showcase-grid">
-              
-              <!-- Desktop Web Application Screenshots -->
-              <div class="showcase-grid__desktop">
-                <img 
-                  src="./assets/portcap2.png" 
-                  alt="Alert-U Web Dashboard Overview" 
-                  class="desktop-1" 
-                />
-                <img 
-                  src="./assets/portcap3.png" 
-                  alt="Alert-U Web Management View" 
-                  class="desktop-2" 
-                />
-              </div>
-
-              <!-- Mobile Application Screenshots -->
-              <div class="showcase-grid__mobile">
-                <img 
-                  src="./assets/mobcap1.jpg" 
-                  alt="Alert-U Mobile Interface 1" 
-                  class="mobile-1" 
-                />
-                <img 
-                  src="./assets/mobcap2.jpg" 
-                  alt="Alert-U Mobile Interface 2" 
-                  class="mobile-2" 
-                />
-              </div>
-
-            </div>
-          </div>
-        </a>
-
-        <!-- Redesigned Info Container -->
-        <div class="project__info">
-          <!-- 1. Location / Subtitle Badge -->
-          <div class="project__badge">
-            <span class="project__badge-text">Capstone Project• Paombong,Bulacan</span>
-          </div>
-
-          <!-- 2. Main Title -->
-          <h3 class="project__title--enhanced">Alert-U: Web & Mobile Disaster Risk Incident Reporting System </h3>
-          <h3 class="project__title--enhanced"></h3>
-
-          <!-- 3. Tech Stack Tags -->
-          <div class="project__tech-stack">
-            <span class="tech-tag">React.js</span>
-            <span class="tech-tag">Flutter</span>
-            <span class="tech-tag">Firebase</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Express.js</span>
-            <span class="tech-tag">Backblaze B2</span>
-            <span class="tech-tag">WebSockets IO</span>
-            <span class="tech-tag">Vercel</span>
-            <span class="tech-tag">REST APIs</span>
-            <span class="tech-tag">Agora SDK</span>
-            <span class="tech-tag">OpenRouteService</span>
-            <span class="tech-tag">Github</span>
-            <span class="tech-tag">OpenFreeMaps</span>
-            <span class="tech-tag">Railway</span>
-          </div>
-
-          <!-- 4. Description -->
-          <p class="project__description--enhanced">
-            A real-time disaster reporting and emergency response management platform developed for Paombong, Bulacan. Connects residents directly with municipal dispatchers for instant incident tracking and emergency alerts.
-          </p>
-
-          <!-- 5. Categorized Action Buttons -->
-          <div class="project__actions">
-            <!-- Primary Live App Button -->
-            <a href="https://drive.google.com/file/d/1socBsWzAEHFT1eGLzOuPdEH6wG4kv00D/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-              <span>App Demo</span>
-              <i class="fas fa-external-link-alt"></i>
-            </a>
-
-            <!-- Secondary GitHub Code Links -->
-            <div class="project__github-links">
-              <a href="https://github.com/carl-rivero134gg/AlertU-Admin" target="_blank" rel="noopener noreferrer" class="btn btn--github">
-                <i class="fab fa-github"></i> Web Code
-              </a>
-              <a href="https://github.com/carl-rivero134gg/AlertU-MobileFlutter" target="_blank" rel="noopener noreferrer" class="btn btn--github">
-                <i class="fab fa-github"></i> Mobile Code
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project Item 2: Gumande -->
-      <div class="project project-left">
-        <a href="https://www.gumandetiresphilippines.com/" target="_blank" rel="noopener noreferrer">
-          <div class="project__image-container project__image-container--gumande" style="background-image: url('./assets/gumande.png'); background-size: cover; background-position: center;">
-            <div class="showcase-grid__desktop--gumande">
-              <img 
-                src="./assets/gumande1.png" 
-                alt="Gumande Desktop Overview 1" 
-                class="desktop-gumande-img desktop-gumande-img--left" 
-              />
-              <img 
-                src="./assets/gumande2.png" 
-                alt="Gumande Desktop Overview 2" 
-                class="desktop-gumande-img desktop-gumande-img--right" 
-              />
-            </div>
-          </div>
-        </a>
-
-        <!-- Redesigned Info Container -->
-        <div class="project__info">
-          <!-- 1. Location / Subtitle Badge -->
-          <div class="project__badge">
-            <span class="project__badge-text">Project Boxhive Solutions</span>
-          </div>
-
-          <!-- 2. Main Title -->
-          <h3 class="project__title--enhanced">Gumande Tires Philippines</h3>
-
-          <!-- 3. Tech Stack Tags -->
-          <div class="project__tech-stack">
-            <span class="tech-tag">Next.js</span>
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">OpenFreeMaps</span>
-            <span class="tech-tag">Leaflet</span>
-            <span class="tech-tag">Github</span>
-          </div>
-
-          <!-- 4. Description -->
-          <p class="project__description--enhanced">
-            A responsive tire business website developed for Gumande Tires in the Philippines. Showcases tire products and services while helping customers easily explore offerings, find store locations, and connect with the business.
-          </p>
-
-          <!-- 5. Categorized Action Buttons -->
-          <div class="project__actions">
-            <!-- Primary Live App Button -->
-            <a href="https://www.gumandetiresphilippines.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-              <span>Live Website</span>
-              <i class="fas fa-external-link-alt"></i>
-            </a>
-
-            <!-- Secondary GitHub Code Links -->
-            <div class="project__github-links">
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <section class="contact" id="contact">
-      <h2 class="contact__heading section-heading">Contact</h2>
-      <p class="contact__text">Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.</p>
-
-      <form
-        class="contact__form"
-        action="https://formspree.io/f/xdoprgpv"
-        method="POST"
-      >
-        <input
-          class="contact__form-name"
-          type="text"
-          name="name"
-          placeholder="Name"
-        />
-
-        <input
-          class="contact__form-email"
-          type="email"
-          name="_replyto"
-          placeholder="Email"
-        />
-
-        <textarea
-          class="contact__form-message"
-          name="message"
-          placeholder="Message"
-        ></textarea>
-
-        <div class="contact__form-error-submit">
-          <div class="form-error">
-            <div class="form-error__name">Please enter your name.</div>
-            <div class="form-error__email">Please enter a valid email.</div>
-            <div class="form-error__msg">Please enter a message.</div>
-          </div>
-          <button type="button" class="contact__form-submit-2 project__live-2" id="form-submit">Submit</button>
-        </div>
-      </form>
-    </section>
-
-    <footer class="footer">
-      <a href="#hero">
-        <div class="return-home">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" >
-            <title></title>
-            <path fill="#fafafa" d="M17.707 10.293l-5-5c-0.391-0.391-1.024-0.391-1.414 0l-5 5c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l4.293-4.293 4.293 4.293c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414zM17.707 17.293l-5-5c-0.391-0.391-1.024-0.391-1.414 0l-5 5c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l4.293-4.293 4.293 4.293c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414z"></path>
-          </svg>
-        </div>
-      </a>
-      <div class="socials">
-        <a href="https://github.com/carl-rivero134gg" target="_blank"> 
-          <div class="socials__github">
-            <img src="./assets/github-logo.png" alt="" />
-          </div>
-        </a>
-        <a href="mailto:carlandrei.rivero13@gmail.com" target="_blank">
-          <div class="socials__email">
-            <img src="./assets/mail.png" alt="" />
-          </div>
-        </a>
-      </div>
-      <p class="copyright">CARL RIVERO ©2026</p>
-    </footer>
-  </body>
-</html>
+            style="width: 170px !important; height:
