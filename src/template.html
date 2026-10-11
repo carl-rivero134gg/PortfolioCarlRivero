@@ -313,11 +313,11 @@
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9) !important;
       }
 
-      /* Horizontal Scrolling Row & Navigation Header with Corrected Spacing */
+      /* Centered Secondary Projects Section & Navigation Header */
       .secondary-projects {
         width: 100%;
         max-width: 1400px;
-        margin: 8rem auto 6rem auto; /* Generous breathing room above and below before Contact section */
+        margin: 8rem auto 6rem auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -329,6 +329,7 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        max-width: 1320px;
         margin-bottom: 2.5rem;
       }
 
@@ -369,17 +370,25 @@
         box-shadow: 0 6px 20px rgba(235, 87, 87, 0.4);
       }
 
-      /* Scrollable Container with Smooth Padding & Snap */
+      /* Centered Scrollable Container with Balanced Box Dimensions */
       .secondary-projects__scroll-container {
         display: flex;
+        justify-content: center; /* Centers cards when they fit on screen */
         gap: 3rem;
         overflow-x: auto;
         width: 100%;
+        max-width: 1350px;
         padding: 1rem 0.5rem 3rem 0.5rem;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         scrollbar-width: thin;
         scrollbar-color: rgba(235, 87, 87, 0.5) rgba(255, 255, 255, 0.05);
+      }
+
+      @media(min-width: 1250px) {
+        .secondary-projects__scroll-container {
+          justify-content: center;
+        }
       }
 
       .secondary-projects__scroll-container::-webkit-scrollbar {
@@ -394,9 +403,10 @@
         border-radius: 4px;
       }
 
-      /* Media Project Card Styling */
+      /* Balanced Square/Box Card Styling (Not a tall vertical rectangle) */
       .media-project-card {
-        flex: 0 0 390px;
+        flex: 0 0 410px;
+        min-height: 520px; /* Balanced box height for descriptions */
         scroll-snap-align: start;
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -426,8 +436,7 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
 
-      .media-project-card__media img,
-      .media-project-card__media video {
+      .media-project-card__media img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -435,12 +444,12 @@
         transition: transform 0.4s ease;
       }
 
-      .media-project-card__media:hover video {
+      .media-project-card__media:hover img {
         transform: scale(1.05);
       }
 
       .media-project-card__body {
-        padding: 2.5rem;
+        padding: 2.2rem;
         display: flex;
         flex-direction: column;
         flex-grow: 1;
@@ -451,25 +460,25 @@
         font-size: 2.2rem;
         font-weight: 700;
         color: #ffffff;
-        margin-bottom: 1.2rem;
+        margin-bottom: 1rem;
       }
 
       .media-project-card__description {
-        font-size: 1.5rem;
-        line-height: 1.6;
+        font-size: 1.45rem;
+        line-height: 1.55;
         color: rgba(255, 255, 255, 0.75);
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
       }
 
       .media-project-card__tech {
         display: flex;
         flex-wrap: wrap;
         gap: 0.6rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
       }
 
       .media-project-card__tech span {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         font-weight: 600;
         color: #b0c4de;
         background: rgba(255, 255, 255, 0.05);
@@ -478,7 +487,7 @@
         border-radius: 6px;
       }
 
-      /* GitHub Button below description (Matches Alert-U Style) */
+      /* GitHub Button below description */
       .btn-card-github {
         display: inline-flex;
         align-items: center;
@@ -980,7 +989,7 @@
         </div>
       </div>
 
-      <!-- Other Notable Projects: Scrollable Row with Media Cards & Left/Right Chevrons -->
+      <!-- Other Notable Projects: Centered Scrollable Row with Balanced Square Cards & Chevrons -->
       <div class="secondary-projects">
         <div class="secondary-projects__header-row">
           <h3 class="secondary-projects__heading">Other Notable Projects</h3>
@@ -999,10 +1008,7 @@
           <!-- Mini Media Card 1: 3MigsBarong -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <video class="thumbnail-video" autoplay muted loop playsinline preload="metadata">
-                <source src="https://drive.google.com/uc?export=download&id=1KbuPE5w21b3PzGzt7Gf5XaH1zAnPNUk1" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="3MigsBarong Preview" />
             </div>
             <div class="media-project-card__body">
               <div>
@@ -1027,10 +1033,7 @@
           <!-- Mini Media Card 2: Bayani Rise of Heroes -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <video class="thumbnail-video" autoplay muted loop playsinline preload="metadata">
-                <source src="https://drive.google.com/uc?export=download&id=11Kim6L5CLiGGCJa46Z_VnSIy0xcSJdrL" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Bayani Rise of Heroes Preview" />
             </div>
             <div class="media-project-card__body">
               <div>
@@ -1055,10 +1058,7 @@
           <!-- Mini Media Card 3: Inventory Management System -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <video class="thumbnail-video" autoplay muted loop playsinline preload="metadata">
-                <source src="https://drive.google.com/uc?export=download&id=1KbuPE5w21b3PzGzt7Gf5XaH1zAnPNUk1" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Inventory Management System Preview" />
             </div>
             <div class="media-project-card__body">
               <div>
@@ -1084,28 +1084,18 @@
 
     </section>
 
-    <!-- Simple JS for Left & Right Chevron Scrolling & First 10 Seconds Video Loop -->
+    <!-- Simple JS for Left & Right Chevron Scrolling -->
     <script>
       const scrollContainer = document.getElementById('projects-scroll-row');
       const btnLeft = document.getElementById('scroll-left');
       const btnRight = document.getElementById('scroll-right');
 
       btnLeft.addEventListener('click', () => {
-        scrollContainer.scrollBy({ left: -420, behavior: 'smooth' });
+        scrollContainer.scrollBy({ left: -430, behavior: 'smooth' });
       });
 
       btnRight.addEventListener('click', () => {
-        scrollContainer.scrollBy({ left: 420, behavior: 'smooth' });
-      });
-
-      // Restrict preview videos to loop only the first 10 seconds
-      document.querySelectorAll('video.thumbnail-video').forEach(video => {
-        video.addEventListener('timeupdate', () => {
-          if (video.currentTime >= 10) {
-            video.currentTime = 0;
-            video.play();
-          }
-        });
+        scrollContainer.scrollBy({ left: 430, behavior: 'smooth' });
       });
     </script>
 
