@@ -211,33 +211,71 @@
         width: 100%;
       }
 
-      /* Horizontal Scrolling Row for Media Project Cards */
+      /* Horizontal Scrolling Row & Navigation Header */
       .secondary-projects {
         width: 100%;
         max-width: 1400px;
-        margin: 5rem auto 0 auto;
+        margin: 6rem auto 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 0 2rem;
+      }
+
+      .secondary-projects__header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2.5rem;
       }
 
       .secondary-projects__heading {
         font-size: 3rem;
         font-weight: 700;
         color: #ffffff;
-        margin-bottom: 2.5rem;
         text-transform: uppercase;
         letter-spacing: 2px;
-        text-align: center;
+        margin: 0;
       }
 
+      /* Chevron Navigation Controls */
+      .scroll-nav-btns {
+        display: flex;
+        gap: 1.2rem;
+      }
+
+      .scroll-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1.6rem;
+
+        &:hover {
+          background: #eb5757;
+          border-color: #eb5757;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(235, 87, 87, 0.4);
+        }
+      }
+
+      /* Scrollable Container with Smooth Padding & Snap */
       .secondary-projects__scroll-container {
         display: flex;
-        gap: 2.5rem;
+        gap: 3rem;
         overflow-x: auto;
         width: 100%;
-        padding: 1.5rem 0.5rem 2.5rem 0.5rem;
+        padding: 1rem 0.5rem 3rem 0.5rem;
         scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
         scrollbar-width: thin;
         scrollbar-color: rgba(235, 87, 87, 0.5) rgba(255, 255, 255, 0.05);
       }
@@ -256,101 +294,122 @@
         border-radius: 4px;
       }
 
-      /* Media Project Card */
+      /* Media Project Card Styling */
       .media-project-card {
-        flex: 0 0 380px;
+        flex: 0 0 390px;
         scroll-snap-align: start;
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
+        border-radius: 16px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-        backdrop-filter: blur(6px);
-      }
-
-      .media-project-card:hover {
-        transform: translateY(-6px);
-        border-color: rgba(235, 87, 87, 0.5);
-        background: rgba(255, 255, 255, 0.06);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-      }
-
-      /* Card Top Media Box (Supports Video or Image Thumbnail) */
-      .media-project-card__media {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        background-color: #0d1117;
-        overflow: hidden;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-        video, img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-      }
-
-      /* Card Content Body */
-      .media-project-card__body {
-        padding: 2.2rem;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        justify-content: space-between;
-      }
-
-      .media-project-card__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1rem;
-      }
-
-      .media-project-card__title {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 0.8rem;
-      }
-
-      .media-project-card__description {
-        font-size: 1.4rem;
-        line-height: 1.5;
-        color: rgba(255, 255, 255, 0.75);
-        margin-bottom: 1.8rem;
-      }
-
-      .media-project-card__tech {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: auto;
-
-        span {
-          font-size: 1.1rem;
-          font-weight: 600;
-          color: #b0c4de;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 0.25rem 0.7rem;
-          border-radius: 4px;
-        }
-      }
-
-      /* GitHub Link Icon Button on Card Header */
-      .github-link-icon {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 2rem;
-        transition: color 0.2s ease, transform 0.2s ease;
+        transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
         &:hover {
+          transform: translateY(-8px);
+          border-color: rgba(235, 87, 87, 0.5);
+          background: rgba(255, 255, 255, 0.06);
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+        }
+
+        &__media {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          background-color: #0d1117;
+          overflow: hidden;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+          img, video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+          }
+
+          &:hover img {
+            transform: scale(1.03);
+          }
+        }
+
+        &__body {
+          padding: 2.5rem;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          justify-content: space-between;
+        }
+
+        &__title {
+          font-size: 2.2rem;
+          font-weight: 700;
           color: #ffffff;
-          transform: scale(1.1);
+          margin-bottom: 1.2rem;
+        }
+
+        &__description {
+          font-size: 1.5rem;
+          line-height: 1.6;
+          color: rgba(255, 255, 255, 0.75);
+          margin-bottom: 2rem;
+        }
+
+        &__tech {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.6rem;
+          margin-bottom: 2rem;
+
+          span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #b0c4de;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+          }
+        }
+      }
+
+      /* GitHub Button below description (Matches Alert-U Project Style) */
+      .btn-card-github {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 0.8rem 1.6rem;
+        background-color: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
+        color: #ffffff;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-top: auto;
+
+        i {
+          font-size: 1.6rem;
+          color: #eb5757;
+        }
+
+        &:hover {
+          background-color: #ffffff;
+          color: #0d1117;
+          border-color: #ffffff;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+
+          i {
+            color: #0d1117;
+          }
         }
       }
     </style>
@@ -797,110 +856,115 @@
         </div>
       </div>
 
-      <!-- Other Notable Projects: Horizontally Scrollable Row with Embedded Media Previews -->
+      <!-- Other Notable Projects: Scrollable Row with Media Cards & Left/Right Chevrons -->
       <div class="secondary-projects">
-        <h3 class="secondary-projects__heading">Other Notable Projects</h3>
+        <div class="secondary-projects__header-row">
+          <h3 class="secondary-projects__heading">Other Notable Projects</h3>
+          <div class="scroll-nav-btns">
+            <button class="scroll-btn" id="scroll-left" aria-label="Scroll Left">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="scroll-btn" id="scroll-right" aria-label="Scroll Right">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
         
-        <div class="secondary-projects__scroll-container">
+        <div class="secondary-projects__scroll-container" id="projects-scroll-row">
           
           <!-- Mini Media Card 1 -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <!-- You can use an <img> or a <video> element here as your media preview evidence -->
-              <img src="./assets/cybersec.png" alt="Weather Forecast App Preview" />
+              <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=800&q=80" alt="Weather Forecast App Preview" />
             </div>
             <div class="media-project-card__body">
               <div>
-                <div class="media-project-card__header">
-                  <h4 class="media-project-card__title">Weather Forecast App</h4>
-                  <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="github-link-icon" title="View Source on GitHub">
-                    <i class="fab fa-github"></i>
-                  </a>
-                </div>
+                <h4 class="media-project-card__title">Weather Forecast App</h4>
                 <p class="media-project-card__description">
                   A dynamic meteorological web application providing real-time conditions, forecasts, and location-based weather tracking.
                 </p>
+                <div class="media-project-card__tech">
+                  <span>JavaScript</span>
+                  <span>REST APIs</span>
+                  <span>CSS3</span>
+                </div>
               </div>
-              <div class="media-project-card__tech">
-                <span>JavaScript</span>
-                <span>REST APIs</span>
-                <span>CSS3</span>
-              </div>
+              <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="btn-card-github">
+                <i class="fab fa-github"></i>
+                <span>View Source Code</span>
+              </a>
             </div>
           </div>
 
           <!-- Mini Media Card 2 -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <img src="./assets/cybersec.png" alt="Interactive Task Manager Preview" />
+              <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&q=80" alt="Interactive Task Manager Preview" />
             </div>
             <div class="media-project-card__body">
               <div>
-                <div class="media-project-card__header">
-                  <h4 class="media-project-card__title">Interactive Task Manager</h4>
-                  <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="github-link-icon" title="View Source on GitHub">
-                    <i class="fab fa-github"></i>
-                  </a>
-                </div>
+                <h4 class="media-project-card__title">Interactive Task Manager</h4>
                 <p class="media-project-card__description">
                   A streamlined productivity web utility enabling users to organize daily workflows, prioritize goals, and track ongoing tasks.
                 </p>
+                <div class="media-project-card__tech">
+                  <span>React</span>
+                  <span>Tailwind</span>
+                  <span>Local Storage</span>
+                </div>
               </div>
-              <div class="media-project-card__tech">
-                <span>React</span>
-                <span>Tailwind</span>
-                <span>Local Storage</span>
-              </div>
+              <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="btn-card-github">
+                <i class="fab fa-github"></i>
+                <span>View Source Code</span>
+              </a>
             </div>
           </div>
 
           <!-- Mini Media Card 3 -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <img src="./assets/cybersec.png" alt="Dev Blog Preview" />
+              <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" alt="Dev Blog Preview" />
             </div>
             <div class="media-project-card__body">
               <div>
-                <div class="media-project-card__header">
-                  <h4 class="media-project-card__title">Dev Blog & Notes Hub</h4>
-                  <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="github-link-icon" title="View Source on GitHub">
-                    <i class="fab fa-github"></i>
-                  </a>
-                </div>
+                <h4 class="media-project-card__title">Dev Blog & Notes Hub</h4>
                 <p class="media-project-card__description">
                   A personal Markdown-powered blogging system built for sharing technical tutorials, coding snippets, and development notes.
                 </p>
+                <div class="media-project-card__tech">
+                  <span>Next.js</span>
+                  <span>Markdown</span>
+                  <span>Vercel</span>
+                </div>
               </div>
-              <div class="media-project-card__tech">
-                <span>Next.js</span>
-                <span>Markdown</span>
-                <span>Vercel</span>
-              </div>
+              <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="btn-card-github">
+                <i class="fab fa-github"></i>
+                <span>View Source Code</span>
+              </a>
             </div>
           </div>
 
           <!-- Mini Media Card 4 -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <img src="./assets/cybersec.png" alt="Retro Arcade Game Preview" />
+              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Retro Arcade Game Preview" />
             </div>
             <div class="media-project-card__body">
               <div>
-                <div class="media-project-card__header">
-                  <h4 class="media-project-card__title">Retro Arcade Browser Game</h4>
-                  <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="github-link-icon" title="View Source on GitHub">
-                    <i class="fab fa-github"></i>
-                  </a>
-                </div>
+                <h4 class="media-project-card__title">Retro Arcade Browser Game</h4>
                 <p class="media-project-card__description">
                   A lightweight canvas-based arcade game featuring vintage aesthetic controls, sound effects, and high score persistence.
                 </p>
+                <div class="media-project-card__tech">
+                  <span>HTML5 Canvas</span>
+                  <span>JavaScript</span>
+                  <span>Sass</span>
+                </div>
               </div>
-              <div class="media-project-card__tech">
-                <span>HTML5 Canvas</span>
-                <span>JavaScript</span>
-                <span>Sass</span>
-              </div>
+              <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="btn-card-github">
+                <i class="fab fa-github"></i>
+                <span>View Source Code</span>
+              </a>
             </div>
           </div>
 
@@ -908,6 +972,21 @@
       </div>
 
     </section>
+
+    <!-- Simple JS for Left & Right Chevron Scrolling -->
+    <script>
+      const scrollContainer = document.getElementById('projects-scroll-row');
+      const btnLeft = document.getElementById('scroll-left');
+      const btnRight = document.getElementById('scroll-right');
+
+      btnLeft.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: -420, behavior: 'smooth' });
+      });
+
+      btnRight.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: 420, behavior: 'smooth' });
+      });
+    </script>
 
     <section class="contact" id="contact">
       <h2 class="contact__heading section-heading">Contact</h2>
