@@ -435,7 +435,7 @@
         transition: transform 0.4s ease;
       }
 
-      .media-project-card__media:hover img {
+      .media-project-card__media:hover video {
         transform: scale(1.05);
       }
 
@@ -996,72 +996,83 @@
         
         <div class="secondary-projects__scroll-container" id="projects-scroll-row">
           
-          <!-- Mini Media Card 1 -->
+          <!-- Mini Media Card 1: 3MigsBarong -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=800&q=80" alt="Weather Forecast App Preview" />
+              <video class="thumbnail-video" autoplay muted loop playsinline preload="metadata">
+                <source src="https://drive.google.com/uc?export=download&id=1KbuPE5w21b3PzGzt7Gf5XaH1zAnPNUk1" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
             <div class="media-project-card__body">
               <div>
-                <h4 class="media-project-card__title">Weather Forecast App</h4>
+                <h4 class="media-project-card__title">3MigsBarong E-Commerce</h4>
                 <p class="media-project-card__description">
-                  A dynamic meteorological application providing real-time weather conditions, forecasts, and location-based meteorological data tracking.
+                  3 Migs Barong is an e-commerce web application developed using PHP and Laravel for selling traditional Barong clothing online. It allows users to browse products, add items to their cart, and make purchases through a simple and user-friendly interface.
                 </p>
                 <div class="media-project-card__tech">
-                  <span>JavaScript</span>
+                  <span>PHP Laravel</span>
                   <span>REST APIs</span>
+                  <span>XAMPP</span>
                   <span>CSS3</span>
                 </div>
               </div>
-              <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="btn-card-github">
+              <a href="https://github.com/carl-rivero13/3MigsBarong" target="_blank" rel="noopener noreferrer" class="btn-card-github">
                 <i class="fab fa-github"></i>
                 <span>View Source Code</span>
               </a>
             </div>
           </div>
 
-          <!-- Mini Media Card 2 -->
+          <!-- Mini Media Card 2: Bayani Rise of Heroes -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&q=80" alt="Interactive Task Manager Preview" />
+              <video class="thumbnail-video" autoplay muted loop playsinline preload="metadata">
+                <source src="https://drive.google.com/uc?export=download&id=11Kim6L5CLiGGCJa46Z_VnSIy0xcSJdrL" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
             <div class="media-project-card__body">
               <div>
-                <h4 class="media-project-card__title">Interactive Task Manager</h4>
+                <h4 class="media-project-card__title">Bayani Rise of Heroes</h4>
                 <p class="media-project-card__description">
-                  A streamlined productivity web application enabling users to organize daily workflows, set priorities, and track ongoing tasks seamlessly.
+                  Bayani: Rise of Heroes is a 2D game developed using Unity and C# for mobile and desktop platforms. Players control Dr. Jose Rizal as they dodge enemies, focusing on fast-paced gameplay and reflex-based movement inspired by Filipino history.
                 </p>
                 <div class="media-project-card__tech">
-                  <span>React</span>
-                  <span>Local Storage</span>
-                  <span>Tailwind</span>
+                  <span>C#</span>
+                  <span>Unity</span>
+                  <span>Physics 2D</span>
+                  <span>2D Tilemaps</span>
                 </div>
               </div>
-              <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="btn-card-github">
+              <a href="https://github.com/carl-rivero13/Bayani-Rise-of-Heroes" target="_blank" rel="noopener noreferrer" class="btn-card-github">
                 <i class="fab fa-github"></i>
                 <span>View Source Code</span>
               </a>
             </div>
           </div>
 
-          <!-- Mini Media Card 3 -->
+          <!-- Mini Media Card 3: Inventory Management System -->
           <div class="media-project-card">
             <div class="media-project-card__media">
-              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Retro Web UI Preview" />
+              <video class="thumbnail-video" autoplay muted loop playsinline preload="metadata">
+                <source src="https://drive.google.com/uc?export=download&id=1KbuPE5w21b3PzGzt7Gf5XaH1zAnPNUk1" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
             <div class="media-project-card__body">
               <div>
-                <h4 class="media-project-card__title">Retro Interactive Web UI</h4>
+                <h4 class="media-project-card__title">Inventory Management System</h4>
                 <p class="media-project-card__description">
-                  A creative experimental web interface blending vintage aesthetic layouts with modern interactive JavaScript behaviors and transitions.
+                  An Inventory Management System developed using Python and Django as a web-based application to manage and track product inventory efficiently. It allows users to add, update, and delete items while monitoring stock levels.
                 </p>
                 <div class="media-project-card__tech">
-                  <span>HTML5</span>
-                  <span>Sass</span>
+                  <span>Python (Django)</span>
+                  <span>CSS3</span>
                   <span>JavaScript</span>
                 </div>
               </div>
-              <a href="https://github.com/carl-rivero134gg" target="_blank" rel="noopener noreferrer" class="btn-card-github">
+              <a href="https://github.com/carl-rivero13/Inventory-Management-System" target="_blank" rel="noopener noreferrer" class="btn-card-github">
                 <i class="fab fa-github"></i>
                 <span>View Source Code</span>
               </a>
@@ -1073,7 +1084,7 @@
 
     </section>
 
-    <!-- Simple JS for Left & Right Chevron Scrolling -->
+    <!-- Simple JS for Left & Right Chevron Scrolling & First 10 Seconds Video Loop -->
     <script>
       const scrollContainer = document.getElementById('projects-scroll-row');
       const btnLeft = document.getElementById('scroll-left');
@@ -1085,6 +1096,16 @@
 
       btnRight.addEventListener('click', () => {
         scrollContainer.scrollBy({ left: 420, behavior: 'smooth' });
+      });
+
+      // Restrict preview videos to loop only the first 10 seconds
+      document.querySelectorAll('video.thumbnail-video').forEach(video => {
+        video.addEventListener('timeupdate', () => {
+          if (video.currentTime >= 10) {
+            video.currentTime = 0;
+            video.play();
+          }
+        });
       });
     </script>
 
